@@ -29,7 +29,7 @@ public class BMICalculatorServlet extends HttpServlet{
                  //TODO: determine the built from BMI
                  String build = determineBuild(bmi);
                   //TODO: add bmi and built to the request's attribute
-                 request.setAttribute("bmi", bmi);
+                 request.setAttribute("bmi", Math.round(bmi));
                  request.setAttribute("build", build);
                  //TODO: forward to jsp
                  request.getRequestDispatcher("/bmi_result.jsp").forward(request, response);
@@ -50,13 +50,13 @@ public class BMICalculatorServlet extends HttpServlet{
       
         private String determineBuild(double bmi){
             if(bmi < 18.5) {
-            return "Underweight";
+            return "underweight";
         } else if (bmi < 25) {
-            return "Normal Weight";
+            return "normal weight";
         } else if (bmi <30) {
-            return "Overweight";
+            return "overweight";
         } else if(bmi < 35){
-            return "Obese";
+            return "obese";
 
         } 
          else {
