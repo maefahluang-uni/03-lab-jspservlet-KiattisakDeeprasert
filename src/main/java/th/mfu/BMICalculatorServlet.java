@@ -42,10 +42,12 @@ public class BMICalculatorServlet extends HttpServlet{
         } else {
             response.getWriter().println("please provide weight and height parameters");
         }
+       
     }
-        private double calculateBMI(double weight, double height) {
-        return 0;
-    }
+     private double calculateBMI(double weight, double height){
+         return weight / ((height)*(height));   
+        }
+      
         private String determineBuild(double bmi){
             if(bmi < 18.5) {
             return "Underweight";
